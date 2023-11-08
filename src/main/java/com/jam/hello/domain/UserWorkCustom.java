@@ -3,26 +3,25 @@ package com.jam.hello.domain;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
+
 
 @Getter
+@Setter
 @AllArgsConstructor
 @Entity
-public class UserWork {
+public class UserWorkCustom{
 
     @Id
     @GeneratedValue
     private Long id;
 
+    private String name;
+
     @ManyToOne
-    @JoinColumn(name = "user_id")
     private User worker;
 
     @ManyToOne
-    @JoinColumn(name = "work_id")
-    private Work work;
-
-    @ManyToOne
-    @JoinColumn(name = "date")
     private Calendar workday;
 
     @Column(name = "time")

@@ -14,8 +14,11 @@ public class Work {
 
     @Id
     @GeneratedValue
-    @Column(name = "work_id")
+    @Column
     private Long id;
 
     private String name;
+
+    @Column(name = "location")
+    private Location location;
 }
